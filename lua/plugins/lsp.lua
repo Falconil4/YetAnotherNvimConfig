@@ -13,10 +13,18 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require('mason-lspconfig').setup({
-				ensure_installed = { 'lua_ls' },
+				ensure_installed = { 'lua_ls', 'omnisharp' },
 				handlers = {
 					function(server_name)
-						require('lspconfig')[server_name].setup({})
+						require('lspconfig')[server_name].setup({
+							handlers = {
+								["textDocument/codeLens"] = function(_, _, params,
+												     client_id, bufnr, _)
+									vim.lsp.handlers["textDocument/codeLens"](_, _,
+										params, client_id, bufnr)
+								end
+							}
+						})
 					end,
 				},
 			})
@@ -86,5 +94,15 @@ return {
 			})
 		end
 
+	},
+	{
+		'nvimdev/lspsaga.nvim',
+		config = function()
+			require('lspsaga').setup({})
+		end,
+		dependencies = {
+			'nvim-treesitter/nvim-treesitter', -- optional
+			'nvim-tree/nvim-web-devicons', -- optional
+		}
 	},
 }

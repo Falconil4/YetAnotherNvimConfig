@@ -13,6 +13,5 @@ vim.g.clipboard = {
 
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.number = true
+vim.opt.wrap = false
 vim.opt.relativenumber = true
-vim.g.material_style = 'palenight'
-vim.cmd 'colorscheme material'
