@@ -39,7 +39,7 @@ return {
 				filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
 			}
 
-			local defaultConfigServers = { "lua_ls", "volar", 'html', 'cssls' }
+			local defaultConfigServers = { "lua_ls", "volar", 'html', 'cssls', 'angularls' }
 			for _, lsp in ipairs(defaultConfigServers) do
 				lspconfig[lsp].setup({})
 			end
