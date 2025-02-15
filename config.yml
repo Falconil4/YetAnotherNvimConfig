@@ -1,0 +1,6 @@
+# NOTE: this is here only for version control - it should be copied into ~/.config/lazygit
+
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never --side-by-side

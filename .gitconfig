@@ -1,0 +1,15 @@
+; NOTE: this is here only for version control - it should be copied into ~/
+
+[init]
+	defaultBranch = main
+
+[user]
+	name = falco
+
+[credential]
+	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
+
+[delta]
+	dark = true
+	plus-style = "syntax #005f00"
+	plus-emph-style = "syntax #008700"

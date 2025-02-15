@@ -13,28 +13,41 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require('mason-lspconfig').setup({
-				ensure_installed = { 'lua_ls', 'omnisharp' },
+				ensure_installed = { 'lua_ls', 'omnisharp', 'volar', 'ts_ls', 'html', 'cssls' },
+			})
+
+			local lspconfig = require('lspconfig')
+
+			lspconfig.omnisharp.setup({
 				handlers = {
-					function(server_name)
-						require('lspconfig')[server_name].setup({
-							handlers = {
-								["textDocument/codeLens"] = function(_, _, params,
-												     client_id, bufnr, _)
-									vim.lsp.handlers["textDocument/codeLens"](_, _,
-										params, client_id, bufnr)
-								end
-							}
-						})
-					end,
+					["textDocument/codeLens"] = function(_, _, params, client_id, bufnr, _)
+						vim.lsp.handlers["textDocument/codeLens"](_, _, params, client_id, bufnr)
+					end
 				},
 			})
+
+			lspconfig.ts_ls.setup {
+				init_options = {
+					plugins = {
+						{
+							name = '@vue/typescript-plugin',
+							location = require('mason-registry').get_package('vue-language-server'):get_install_path() .. '/node_modules/@vue/language-server',
+							languages = { 'vue' },
+						},
+					},
+				},
+				filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+			}
+
+			local defaultConfigServers = { "lua_ls", "volar", 'html', 'cssls' }
+			for _, lsp in ipairs(defaultConfigServers) do
+				lspconfig[lsp].setup({})
+			end
 		end,
 	},
 	{
 		'neovim/nvim-lspconfig',
 		config = function()
-			vim.opt.signcolumn = 'yes'
-
 			local lspconfig_defaults = require('lspconfig').util.default_config
 			lspconfig_defaults.capabilities = vim.tbl_deep_extend(
 				'force',
@@ -98,11 +111,13 @@ return {
 	{
 		'nvimdev/lspsaga.nvim',
 		config = function()
-			require('lspsaga').setup({})
+			require('lspsaga').setup({
+				lightbulb = { enable = false }
+			})
 		end,
 		dependencies = {
-			'nvim-treesitter/nvim-treesitter', -- optional
-			'nvim-tree/nvim-web-devicons', -- optional
+			'nvim-treesitter/nvim-treesitter',
+			'nvim-tree/nvim-web-devicons',
 		}
 	},
 }

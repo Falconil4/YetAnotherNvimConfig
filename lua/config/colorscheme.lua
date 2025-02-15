@@ -1,6 +1,8 @@
+-- global colors
 vim.g.material_style = 'palenight'
 vim.cmd 'colorscheme material'
 
+-- c# colors
 vim.api.nvim_set_hl(0, "@lsp.type.keyword.cs", { foreground = "#569cd6" })
 vim.api.nvim_set_hl(0, "@lsp.type.type.cs", { foreground = "#b5cea8" })
 vim.api.nvim_set_hl(0, "@lsp.type.function.cs", { foreground = "#dcdcaa" })
@@ -28,3 +30,24 @@ vim.api.nvim_set_hl(0, "@lsp.type.delegate.cs", { foreground = "#dcdcaa" })
 vim.api.nvim_set_hl(0, "@lsp.type.field.cs", { foreground = "#9cdcfe" })
 vim.api.nvim_set_hl(0, "@lsp.type.constant.cs", { foreground = "#4ec9b0" })
 vim.api.nvim_set_hl(0, "@lsp.codelens", { foreground = "#ff6347", bold = true })
+
+-- vue colors
+vim.api.nvim_set_hl(0, "htmlTag", { foreground = "#9cdcfe" })
+vim.api.nvim_set_hl(0, "htmlTagName", { foreground = "#569cd6" })
+vim.api.nvim_set_hl(0, "htmlSpecialTagName", { foreground = "#569cd6" })
+vim.api.nvim_set_hl(0, "htmlArg", { foreground = "#9cdcfe" })
+vim.api.nvim_set_hl(0, "htmlScriptTag", { foreground = "#9cdcfe" })
+vim.api.nvim_set_hl(0, "htmlString", { foreground = "#6a9955" })
+vim.api.nvim_set_hl(0, "javaScriptReserved", { foreground = "#569cd6" })
+vim.api.nvim_set_hl(0, "javaScriptIdentifier", { foreground = "#569cd6" })
+vim.api.nvim_set_hl(0, "javaScriptType", { foreground = "#569cd6" })
+vim.api.nvim_set_hl(0, "javaScriptFunction", { foreground = "#569cd6" })
+vim.api.nvim_set_hl(0, "javaScriptStringS", { foreground = "#6a9955" })
+vim.api.nvim_set_hl(0, "javaScript", { foreground = "#569cd6" })
+vim.api.nvim_set_hl(0, "@lsp.type.class.vue", { foreground = "#4ec9b0" })
+vim.api.nvim_set_hl(0, "@lsp.type.variable.vue", { foreground = "#9cdcfe" })
+vim.api.nvim_set_hl(0, "@lsp.type.function.vue", { foreground = "#dcdcaa" })
+vim.api.nvim_set_hl(0, "@lsp.type.member.vue", { foreground = "#dcdcaa" })
+vim.api.nvim_set_hl(0, "@lsp.typemod.variable.defaultLibrary.vue", { foreground = "#569cd6" })
+vim.api.nvim_set_hl(0, "@lsp.typemod.member.defaultLibrary.vue", { foreground = "#dcdcaa" })
+vim.api.nvim_set_hl(0, "@lsp.type.property.vue", { foreground = "#d4d4d4" })
