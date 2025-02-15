@@ -51,4 +51,9 @@ return {
 			require('nvim-ts-autotag').setup()
 		end,
 	},
+	{
+		'folke/ts-comments.nvim',
+		event = "VeryLazy",
+		opts = {},
+	},
 }
