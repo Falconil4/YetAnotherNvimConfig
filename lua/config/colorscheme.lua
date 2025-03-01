@@ -1,6 +1,4 @@
 -- global colors
-vim.g.material_style = 'palenight'
-vim.cmd 'colorscheme material'
 
 -- c# colors
 vim.api.nvim_set_hl(0, "@lsp.type.keyword.cs", { foreground = "#569cd6" })

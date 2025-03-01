@@ -56,4 +56,13 @@ return {
 		event = "VeryLazy",
 		opts = {},
 	},
+	{
+		'xiyaowong/transparent.nvim',
+		lazy = false,
+		config = function()
+			require('transparent').setup({
+				extra_groups = { 'NormalFloat' }
+			})
+		end
+	},
 }
