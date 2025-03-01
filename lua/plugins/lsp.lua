@@ -24,6 +24,13 @@ return {
 						vim.lsp.handlers["textDocument/codeLens"](_, _, params, client_id, bufnr)
 					end
 				},
+				settings = {
+					RoslynExtensionsOptions = {
+						EnableAnalyzersSupport = true,
+						EnableImportCompletion = true,
+						AnalyzeOpenDocumentsOnly = true,
+					}
+				}
 			})
 
 			lspconfig.ts_ls.setup {
