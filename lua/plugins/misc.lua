@@ -63,6 +63,7 @@ return {
 			require('transparent').setup({
 				extra_groups = { 'NormalFloat' }
 			})
+			require('transparent').clear_prefix('BufferLine')
 		end
 	},
 }
