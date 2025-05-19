@@ -31,7 +31,7 @@ return {
 		'nvim-treesitter/nvim-treesitter',
 		config = function()
 			require('nvim-treesitter.configs').setup({
-				ensure_installed = { 'lua', 'json', 'html', 'scss', 'javascript', 'typescript', 'vue', 'angular', 'c_sharp' }
+				ensure_installed = { 'lua', 'json', 'html', 'css', 'scss', 'javascript', 'typescript', 'vue', 'angular', 'c_sharp' }
 			})
 		end
 	},

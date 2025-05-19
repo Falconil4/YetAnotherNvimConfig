@@ -21,6 +21,8 @@ vim.keymap.set('n', '<F12>', function() require('dap').step_out() end, { desc = 
 vim.keymap.set('n', '<Leader>b', function() require('dap').toggle_breakpoint() end, { desc = "Toggle breakpoint" })
 vim.keymap.set('n', '<Leader>B', function() require('dap').toggle_breakpoint() end, { desc = "Toggle breakpoint" })
 vim.keymap.set('n', '<Leader>v', function() require('dapui').toggle() end, { desc = "Toggle debug UI" })
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
 
 vim.keymap.set('i', 'jk', '<Esc>')
 vim.keymap.set('i', '<C-s>', ':w<CR>', { desc = 'Save' })
