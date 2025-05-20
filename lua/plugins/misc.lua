@@ -67,5 +67,8 @@ return {
 	{
 		"sbdchd/neoformat",
 		lazy = false
+	},
+	{
+		"github/copilot.vim",
 	}
 }
