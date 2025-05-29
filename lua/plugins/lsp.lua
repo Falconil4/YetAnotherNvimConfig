@@ -13,7 +13,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require('mason-lspconfig').setup({
-				ensure_installed = { 'lua_ls', 'omnisharp', 'volar', 'ts_ls', 'html', 'cssls', 'angularls', 'jsonls' },
+				ensure_installed = { 'lua_ls', 'omnisharp', 'vue_ls', 'ts_ls', 'html', 'cssls', 'angularls', 'jsonls' },
 			})
 		end,
 	},
