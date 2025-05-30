@@ -7,13 +7,18 @@ return {
 	},
 	{
 		'williamboman/mason.nvim',
-		config = function() require('mason').setup({}) end,
+		config = function() require('mason').setup({
+			registries = {
+				"github:mason-org/mason-registry",
+				"github:Crashdummyy/mason-registry",
+			},
+		}) end,
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require('mason-lspconfig').setup({
-				ensure_installed = { 'lua_ls', 'omnisharp', 'vue_ls', 'ts_ls', 'html', 'cssls', 'angularls', 'jsonls' },
+				ensure_installed = { 'lua_ls', 'vue_ls', 'ts_ls', 'html', 'cssls', 'angularls', 'jsonls' },
 			})
 		end,
 	},
@@ -59,7 +64,6 @@ return {
 				},
 			})
 		end
-
 	},
 	{
 		'nvimdev/lspsaga.nvim',
@@ -73,4 +77,9 @@ return {
 			'nvim-tree/nvim-web-devicons',
 		}
 	},
+	{
+		"seblyng/roslyn.nvim",
+		ft = "cs",
+		opts = {},
+	}
 }

@@ -1,7 +1,3 @@
-vim.lsp.config['omnisharp'] = {
-	cmd = { "OmniSharp", "--languageserver", "RoslynExtensionsOptions:enableAnalyzersSupport=true", "RoslynExtensionsOptions:enableImportCompletion=true" },
-}
-
 vim.lsp.config['ts_ls'] = {
 	init_options = {
 		plugins = {
